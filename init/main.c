@@ -19,7 +19,7 @@ void main(void)
 
 	uart_init();
 
-	uart_puts("123\n");
+	kprintf("123\n");
 
 	while(1) { HALT; }
 }
