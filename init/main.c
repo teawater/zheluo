@@ -1,9 +1,15 @@
+/*
+ * Copyright (c) 2021 Ant Group
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 #include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 #include <multiboot.h>
-#include <elf.h>
-#include <page.h>
+//#include <elf.h>
+#include <mm.h>
 
 #define HALT	asm volatile ("hlt")
 
@@ -19,7 +25,11 @@ void main(void)
 
 	uart_init();
 
-	kprintf("123\n");
+	kprintf("ZheLuo start\n");
 
+	if (mm_init() != 0)
+		goto error;
+
+error:
 	while(1) { HALT; }
 }

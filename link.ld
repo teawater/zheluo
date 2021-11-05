@@ -2,7 +2,6 @@ OUTPUT_FORMAT("elf64-x86-64")
 OUTPUT_ARCH("i386:x86-64")
 ENTRY(start)
 phys = 0x000000100000;
-
 SECTIONS
 {
   kernel_start = phys;

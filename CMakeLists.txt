@@ -9,7 +9,7 @@ add_library(zheluo_asm	STATIC ${ASM_SOURCES})
 
 ## C sources
 
-file(GLOB C_SOURCES init/*.c driver/*.c misc/*.c)
+file(GLOB C_SOURCES init/*.c mm/*.c driver/*.c misc/*.c)
 add_executable(zheluo ${C_SOURCES})
 
 target_include_directories(zheluo
